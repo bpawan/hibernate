@@ -15,6 +15,28 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: root
 
+  prometheus:
+    image: prom/prometheus
+    ports:
+       - 9090:9090
+    volumes:
+      - ./src/main/resources/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+    command: "--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus"
+    depends_on:
+      - exporter
+
+  exporter:
+    image: prom/node-exporter:latest
+    ports:
+      - "9100:9100"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+    - "3000:3000"
+    depends_on:
+    - prometheus
+
   hibernate:
     image: hibernate/hibernate
     depends_on:
@@ -37,3 +59,4 @@ services:
 
 volumes:
   db_data:
+    
