@@ -1,0 +1,40 @@
+version: '3.3'
+
+services:
+  mysql_db:
+    image: mysql:5.7
+    container_name: mysql_db
+    volumes:
+    - db_data:/var/lib/mysql
+    restart: always
+    ports:
+    - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: example
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+
+
+  hibernate:
+    image: hibernate/hibernate
+    depends_on:
+    - mysql_db
+    ports:
+    - 8081:8081
+    environment:
+    - DATABASE_HOST=mysql_db
+    - DATABASE_USER=root
+    - DATABASE_PASSWORD=root
+    - DATABASE_NAME=example
+    - DATABASE_PORT=3306
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+    - 8080:8080
+
+volumes:
+  db_data:
