@@ -1,6 +1,8 @@
 # hibernate example
 
-This repository is an example spring reactive web application. It features the following technologies:
+Example application with Spring Reactive, Hibernate, Docker.
+It features the following technologies:
+
 1. Spring Web Reactive
 2. Spring Data JPA with Hibernate
 3. Mysql database for storeage.
