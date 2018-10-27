@@ -1,4 +1,4 @@
-# hibernate
+# hibernate example
 
 This repository is an example spring reactive web application. It features the following technologies:
 1. Spring Web Reactive
