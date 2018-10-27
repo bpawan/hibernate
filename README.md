@@ -10,4 +10,7 @@ It features the following technologies:
 5. Docker Integration
 6. Java 10.
 
-
+### Exposes:
+* [Application](http://localhost:8081/customers)
+* [Prometheus](http://localhost:9090)
+* [Grafana](http://localhost:3000/)
