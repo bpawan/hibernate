@@ -10,8 +10,11 @@ spring:
     hibernate:
       ddl-auto: create
 
-#logging:
-# level: trace
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 ---
 spring:

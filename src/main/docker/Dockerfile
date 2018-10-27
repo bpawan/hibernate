@@ -1,7 +1,5 @@
 FROM openjdk:10-jdk
 
-MAINTAINER "Pawan Bhattarai <pawawn_bhattarai@hotmail.com>"
-
 VOLUME /tmp
 
 ADD hibernate-0.0.1-SNAPSHOT.jar app.jar

@@ -15,7 +15,6 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: root
 
-
   hibernate:
     image: hibernate/hibernate
     depends_on:
