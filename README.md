@@ -5,8 +5,9 @@ It features the following technologies:
 
 1. Spring Web Reactive
 2. Spring Data JPA with Hibernate
-3. Mysql database for storeage.
-4. Docker integration
-5. Java 10.
+3. Mysql database for storage.
+4. Actuator
+5. Docker Integration
+6. Java 10.
 
 
